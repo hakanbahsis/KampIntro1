@@ -29,16 +29,32 @@ namespace GenericsIntro
                 SayfaSayisi=500,
                 Barkodu="34567"
             });
+            //3.Tanımlama Yöntemi
+            Ekle(ref kitapListesi, new Kitap
+            {
+                Id = 3,
+                Adi = "Savaş ve Barış",
+                Barkodu = "9876",
+                Yazari = "Lev Tolstoy",
+                SayfaSayisi = 1000
+            });
+
 
             foreach (var kitap in kitapListesi)
             {
                 Console.WriteLine($"{kitap.Id} -  {kitap.Adi} - {kitap.Yazari} - {kitap.SayfaSayisi} - {kitap.Barkodu}");
             }
-            
 
+            
+            
             Console.ReadKey();
+          
         }
 
+        public static void Ekle<TVeri>(ref List<TVeri> liste,TVeri veri)
+        {
+            liste.Add(veri);
+        }
 
 
         private static void TestMethod()
