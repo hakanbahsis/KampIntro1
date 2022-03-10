@@ -7,14 +7,49 @@ namespace GenericsIntro
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //TestMethod();
+
+            List<Kitap> kitapListesi = new List<Kitap>();
+            //1.Tanımlama Yöntemi
+            Kitap kitap1 = new Kitap();
+            kitap1.Id = 1;
+            kitap1.Adi = "Vadideki Zambak";
+            kitap1.Yazari = "Balzac";
+            kitap1.SayfaSayisi = 250;
+            kitap1.Barkodu = "12345";
+
+            kitapListesi.Add(kitap1);
+
+            //2.Tanımlama Yöntemi
+            kitapListesi.Add(new Kitap
+            {
+                Id = 2,
+                Adi="Sefiller",
+                Yazari="Victor Hugo",
+                SayfaSayisi=500,
+                Barkodu="34567"
+            });
+
+            foreach (var kitap in kitapListesi)
+            {
+                Console.WriteLine($"{kitap.Id} -  {kitap.Adi} - {kitap.Yazari} - {kitap.SayfaSayisi} - {kitap.Barkodu}");
+            }
+            
+
+            Console.ReadKey();
+        }
+
+
+
+        private static void TestMethod()
+        {
             SortedList<int, string> kullanicilar = new SortedList<int, string>();
             kullanicilar.Add(0, "hakan");
             kullanicilar.Add(2, "Barış");
             kullanicilar.Add(1, "baran");
-            foreach (KeyValuePair<int,string> kullanici in kullanicilar )
+            foreach (KeyValuePair<int, string> kullanici in kullanicilar)
             {
-                Console.WriteLine("ID = "+kullanici.Key+"\t"+"Value = "+kullanici.Value);        
+                Console.WriteLine("ID = " + kullanici.Key + "\t" + "Value = " + kullanici.Value);
             }
 
             Console.WriteLine("Dictionary");
@@ -23,13 +58,13 @@ namespace GenericsIntro
             dKullanicilar.Add(0, "abc");
             dKullanicilar.Add(2, "bac");
             dKullanicilar.Add(1, "cba");
-            foreach (KeyValuePair<int,string> kullanici in dKullanicilar)
+            foreach (KeyValuePair<int, string> kullanici in dKullanicilar)
             {
                 Console.WriteLine("ID = " + kullanici.Key + "\t" + "Value = " + kullanici.Value);
             }
-
-
-            Console.ReadKey();
         }
     }
 }
+
+   
+
