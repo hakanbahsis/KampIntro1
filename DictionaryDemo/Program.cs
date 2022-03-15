@@ -19,6 +19,17 @@ namespace DictionaryDemo
             {
                 Console.WriteLine(isim);
             }
+            Console.WriteLine("----MyDictionary-----");
+            MyDictionary<int, string> plakalar = new MyDictionary<int, string>();
+            plakalar.Add(01, "Adana");
+            Console.WriteLine(plakalar.Length);
+
+            plakalar.Add(73, "Şırnak");
+            Console.WriteLine(plakalar.Length);
+            foreach (var plaka in plakalar.Value)
+            {
+                Console.WriteLine(plaka);
+            }
             Console.ReadKey();
         }
     }
